@@ -1,0 +1,37 @@
+for T in range(int(input())): 
+    N,M = map(int, input().split()) 
+     
+    red_cherries = 0  
+    green_cherries = 0  
+     
+    for i in range(N): 
+        a = input() 
+        if i%2==0: 
+            for k in range(M): 
+                if k%2 ==0 and a[k]=="R": 
+                    green_cherries +=5  
+                elif k%2!=0 and a[k]=="G": 
+                    green_cherries +=3  
+                 
+                if k%2==0 and a[k]=="G": 
+                    red_cherries +=3  
+                elif k%2 !=0 and a[k]=="R": 
+                    red_cherries +=5  
+                     
+        elif i%2 !=0: 
+            for k in range(M): 
+                if k%2 ==0 and a[k]=="G": 
+                    green_cherries +=3  
+                elif k%2 !=0 and a[k]=="R": 
+                    green_cherries +=5  
+                 
+                if k%2==0 and a[k]=="R": 
+                    red_cherries +=5  
+                elif k%2 !=0 and a[k]=="G": 
+                    red_cherries += 3 
+                     
+                     
+    if red_cherries<green_cherries: 
+        print(red_cherries) 
+    else: 
+        print(green_cherries)
